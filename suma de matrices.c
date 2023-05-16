@@ -8,8 +8,8 @@
 #include <stdio.h>
 
 
-#define MAX_FILAS 100
-#define MAX_COLUMNAS 100
+#define MAX_FILAS 10
+#define MAX_COLUMNAS 10
 
 // Función para sumar dos matrices
 void sumarMatrices(int matriz1[MAX_FILAS][MAX_COLUMNAS], int matriz2[MAX_FILAS][MAX_COLUMNAS], int filas, int columnas) {
