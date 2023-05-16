@@ -15,16 +15,16 @@ void sumarMatrices(int matriz1[MAX_FILAS][MAX_COLUMNAS], int matriz2[MAX_FILAS][
     int i, j;
     
     // Realizar la suma de las matrices
-    for (i = 0; i < filas; i++) {
-        for (j = 0; j < columnas; j++) {
+    for (i = 1; i < filas; i++) {
+        for (j = 1; j < columnas; j++) {
             resultado[i][j] = matriz1[i][j] + matriz2[i][j];
         }
     }
     
     // Mostrar la matriz resultante
     printf("La matriz resultante de la suma es:\n");
-    for (i = 0; i < filas; i++) {
-        for (j = 0; j < columnas; j++) {
+    for (i = 1; i < filas; i++) {
+        for (j = 1; j < columnas; j++) {
             printf("%d ", resultado[i][j]);
         }
         printf("\n");
@@ -45,8 +45,8 @@ int main() {
     
     // Leer los elementos de la primera matriz
     printf("Ingrese los elementos de la primera matriz:\n");
-    for (i = 0; i < filas; i++) {
-        for (j = 0; j < columnas; j++) {
+    for (i = 1; i < filas; i++) {
+        for (j = 1; j < columnas; j++) {
             printf("Elemento (%d, %d): ", i, j);
             scanf("%d", &matriz1[i][j]);
         }
@@ -54,8 +54,8 @@ int main() {
     
     // Leer los elementos de la segunda matriz
     printf("Ingrese los elementos de la segunda matriz:\n");
-    for (i = 0; i < filas; i++) {
-        for (j = 0; j < columnas; j++) {
+    for (i = 1; i < filas; i++) {
+        for (j = 1; j < columnas; j++) {
             printf("Elemento (%d, %d): ", i, j);
             scanf("%d", &matriz2[i][j]);
         }
