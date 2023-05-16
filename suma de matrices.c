@@ -37,10 +37,10 @@ int main() {
     int i, j;
     
     // Obtener las dimensiones de las matrices
-    printf("Ingrese el número de filas: ");
+    printf("Ingrese el numero de filas: ");
     scanf("%d", &filas);
     
-    printf("Ingrese el número de columnas: ");
+    printf("Ingrese el numero de columnas: ");
     scanf("%d", &columnas);
     
     // Leer los elementos de la primera matriz
