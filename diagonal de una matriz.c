@@ -9,7 +9,7 @@ int main() {
     int matriz[MAX_DIMENSION][MAX_DIMENSION];
     int dimension;
     int i, j;
-    printf("Ingrese la dimensión de la matriz: ");
+    printf("Ingrese la dimension de la matriz: ");
     scanf("%d", &dimension);
     // Inicializar la matriz en ceros
     for (i = 0; i < dimension; i++) {
