@@ -9,3 +9,5 @@ int main() {
     int matriz[MAX_DIMENSION][MAX_DIMENSION];
     int dimension;
     int i, j;
+    printf("Ingrese la dimensión de la matriz: ");
+    scanf("%d", &dimension);
