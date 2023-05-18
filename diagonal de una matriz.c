@@ -11,3 +11,9 @@ int main() {
     int i, j;
     printf("Ingrese la dimensión de la matriz: ");
     scanf("%d", &dimension);
+    // Inicializar la matriz en ceros
+    for (i = 0; i < dimension; i++) {
+        for (j = 0; j < dimension; j++) {
+            matriz[i][j] = 0;
+        }
+    }
