@@ -5,7 +5,7 @@ en cero, a excepcion de la ultima que se inicializa
 en unos.*/
 
  #include <stdio.h>
-#include <stdlib.h>
+
 
 int main() {
     int x, y, z;
