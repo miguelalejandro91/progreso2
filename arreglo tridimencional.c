@@ -1,5 +1,7 @@
-/* Construir un programa en C. Que sea un arreglo tridimencional 
-con 3 matrices tal que las dos primeras matrices inicialicen en ceros
-y la tercera matriz en unos, el usuario debe definir las dimenciones
- del arreglo, y que se imprima el programa*/
+/* Crear un programa en C que imprima un arreglo 
+tridimencional cuyo tamaño sea definido por el 
+usuario. El programa inicializa todas las matrices 
+en cero, a excepcion de la ultima que se inicializa 
+en unos.*/
+
  
