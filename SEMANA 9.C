@@ -46,6 +46,8 @@ void calcularMatrizTranspuesta(int** matriz, int filas, int columnas) {
         free(transpuesta[i]);
     }
     free(transpuesta);
+
+
 }
 int main() {
     int filas, columnas;
@@ -55,3 +57,8 @@ int main() {
 
     printf("Ingrese el número de columnas: ");
     scanf("%d", &columnas);
+
+
+    // Crear la matriz
+    int** matriz = (int**)malloc(filas * sizeof(int*));
+    
