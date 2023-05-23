@@ -61,7 +61,7 @@ int main() {
 
     // Crear la matriz
     int** matriz = (int**)malloc(filas * sizeof(int*));
-    
+
 
     // Inicializar el generador de números aleatorios
     srand(time(NULL));
@@ -75,8 +75,18 @@ int main() {
         }
     }
 
+
     printf("\nMatriz original:\n");
     imprimirMatriz(matriz, filas, columnas);
 
     calcularMatrizTranspuesta(matriz, filas, columnas);
 
+    
+// Liberar memoria de la matriz original
+    for (int i = 0; i < filas; i++) {
+        free(matriz[i]);
+    }
+    free(matriz);
+
+    return 0;
+}
