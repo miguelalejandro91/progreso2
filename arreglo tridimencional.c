@@ -29,3 +29,17 @@ int main() {
             arreglo[x - 1][j][k] = 1;
         }
     }
+    // Imprimir el arreglo tridimensional
+    printf("Arreglo tridimensional:\n");
+    for (int i = 0; i < x; i++) {
+        for (int j = 0; j < y; j++) {
+            for (int k = 0; k < z; k++) {
+                printf("%d ", arreglo[i][j][k]);
+            }
+            printf("\n");
+        }
+        printf("\n");
+    }
+
+    return 0;
+}
