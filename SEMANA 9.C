@@ -13,6 +13,8 @@ imprimir la matriz original y la matriz transpuesta*/
 int generarNumeroAleatorio() {
     return rand() % 101;
 }
+
+
 // Función para imprimir una matriz
 void imprimirMatriz(int** matriz, int filas, int columnas) {
     for (int i = 0; i < filas; i++) {
@@ -22,6 +24,8 @@ void imprimirMatriz(int** matriz, int filas, int columnas) {
         printf("\n");
     }
 }
+
+
 // Función para calcular la matriz transpuesta
 void calcularMatrizTranspuesta(int** matriz, int filas, int columnas) {
     int** transpuesta = (int**)malloc(columnas * sizeof(int*));
@@ -35,3 +39,11 @@ void calcularMatrizTranspuesta(int** matriz, int filas, int columnas) {
 
     printf("\nMatriz transpuesta:\n");
     imprimirMatriz(transpuesta, columnas, filas);
+
+
+    // Liberar memoria de la matriz transpuesta
+    for (int i = 0; i < columnas; i++) {
+        free(transpuesta[i]);
+    }
+    free(transpuesta);
+}
