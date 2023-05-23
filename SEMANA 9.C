@@ -8,3 +8,8 @@ imprimir la matriz original y la matriz transpuesta*/
 #include <stdio.h>
 #include <stdlib.h>
 #include <time.h>
+
+// Función para generar números aleatorios entre 0 y 100
+int generarNumeroAleatorio() {
+    return rand() % 101;
+}
