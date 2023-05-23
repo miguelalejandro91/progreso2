@@ -22,4 +22,16 @@ void imprimirMatriz(int** matriz, int filas, int columnas) {
         printf("\n");
     }
 }
+// Función para calcular la matriz transpuesta
+void calcularMatrizTranspuesta(int** matriz, int filas, int columnas) {
+    int** transpuesta = (int**)malloc(columnas * sizeof(int*));
 
+    for (int i = 0; i < columnas; i++) {
+        transpuesta[i] = (int*)malloc(filas * sizeof(int));
+        for (int j = 0; j < filas; j++) {
+            transpuesta[i][j] = matriz[j][i];
+        }
+    }
+
+    printf("\nMatriz transpuesta:\n");
+    imprimirMatriz(transpuesta, columnas, filas);
