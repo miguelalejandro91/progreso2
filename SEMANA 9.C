@@ -52,10 +52,10 @@ void calcularMatrizTranspuesta(int** matriz, int filas, int columnas) {
 int main() {
     int filas, columnas;
 
-    printf("Ingrese el número de filas: ");
+    printf("Ingrese el numero de filas: ");
     scanf("%d", &filas);
 
-    printf("Ingrese el número de columnas: ");
+    printf("Ingrese el numero de columnas: ");
     scanf("%d", &columnas);
 
 
@@ -81,7 +81,7 @@ int main() {
 
     calcularMatrizTranspuesta(matriz, filas, columnas);
 
-    
+
 // Liberar memoria de la matriz original
     for (int i = 0; i < filas; i++) {
         free(matriz[i]);
