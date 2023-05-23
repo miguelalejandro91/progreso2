@@ -62,3 +62,21 @@ int main() {
     // Crear la matriz
     int** matriz = (int**)malloc(filas * sizeof(int*));
     
+
+    // Inicializar el generador de números aleatorios
+    srand(time(NULL));
+
+
+    // Llenar la matriz con números aleatorios
+    for (int i = 0; i < filas; i++) {
+        matriz[i] = (int*)malloc(columnas * sizeof(int));
+        for (int j = 0; j < columnas; j++) {
+            matriz[i][j] = generarNumeroAleatorio();
+        }
+    }
+
+    printf("\nMatriz original:\n");
+    imprimirMatriz(matriz, filas, columnas);
+
+    calcularMatrizTranspuesta(matriz, filas, columnas);
+
