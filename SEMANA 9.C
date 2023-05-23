@@ -13,3 +13,13 @@ imprimir la matriz original y la matriz transpuesta*/
 int generarNumeroAleatorio() {
     return rand() % 101;
 }
+// Función para imprimir una matriz
+void imprimirMatriz(int** matriz, int filas, int columnas) {
+    for (int i = 0; i < filas; i++) {
+        for (int j = 0; j < columnas; j++) {
+            printf("%d ", matriz[i][j]);
+        }
+        printf("\n");
+    }
+}
+
