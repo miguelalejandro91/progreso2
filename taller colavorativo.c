@@ -20,6 +20,7 @@ c) ¿En qué año la carrera de Ingeniería de Software recibió la mayor cantid
 #define NUM_ANIOS 5
 
 int main() {
+    
     // Declaración e inicialización del arreglo de alumnos
     int alumnos[NUM_ANIOS][NUM_CARRERAS] = {
         {100, 50, 75, 80, 90, 60, 70},     // Año 1
@@ -28,6 +29,7 @@ int main() {
         {90, 65, 70, 75, 85, 75, 60},      // Año 4
         {105, 75, 90, 70, 95, 80, 55}      // Año 5
     };
+
     // Calcular el año con la mayor cantidad de alumnos
     int maxAlumnos = 0;
     int anioMaxAlumnos = 0;
@@ -44,3 +46,17 @@ int main() {
     }
 
     printf("El anio con la mayor cantidad de alumnos fue el anio %d\n", anioMaxAlumnos);
+
+    // Calcular la carrera con la mayor cantidad de alumnos en el último año
+    int maxAlumnosUltimoAnio = 0;
+    int carreraMaxAlumnosUltimoAnio = 0;
+
+    for (int j = 0; j < NUM_CARRERAS; j++) {
+        int totalAlumnosUltimoAnio = alumnos[NUM_ANIOS - 1][j];
+        if (totalAlumnosUltimoAnio > maxAlumnosUltimoAnio) {
+            maxAlumnosUltimoAnio = totalAlumnosUltimoAnio;
+            carreraMaxAlumnosUltimoAnio = j + 1;
+        }
+    }
+
+    printf("La carrera con la mayor cantidad de alumnos en el último año fue la carrera %d\n", carreraMaxAlumnosUltimoAnio);
