@@ -28,3 +28,19 @@ int main() {
         {90, 65, 70, 75, 85, 75, 60},      // Año 4
         {105, 75, 90, 70, 95, 80, 55}      // Año 5
     };
+    // Calcular el año con la mayor cantidad de alumnos
+    int maxAlumnos = 0;
+    int anioMaxAlumnos = 0;
+
+    for (int i = 0; i < NUM_ANIOS; i++) {
+        int totalAlumnos = 0;
+        for (int j = 0; j < NUM_CARRERAS; j++) {
+            totalAlumnos += alumnos[i][j];
+        }
+        if (totalAlumnos > maxAlumnos) {
+            maxAlumnos = totalAlumnos;
+            anioMaxAlumnos = i + 1;
+        }
+    }
+
+    printf("El anio con la mayor cantidad de alumnos fue el anio %d\n", anioMaxAlumnos);
