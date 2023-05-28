@@ -1,68 +1,39 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#include <math.h>
 
-// Función para convertir una cadena binaria a un número decimal
-int binarioADecimal(char *binario) {
-    int longitud = strlen(binario);
-    int decimal = 0;
-    int potencia = 1;
-
-    for (int i = longitud - 1; i >= 0; i--) {
-        if (binario[i] == '1')
-            decimal += potencia;
-        potencia *= 2;
+long long factorial(int n) {
+    if (n <= 1) {
+        return 1;
+    } else {
+        return n * factorial(n - 1);
     }
-
-    return decimal;
 }
 
-// Función para convertir un número decimal a una cadena hexadecimal
-void decimalAHexadecimal(int decimal, char *hexadecimal) {
-    sprintf(hexadecimal, "%X", decimal);
+long long combinations(int n, int r) {
+    return factorial(n) / (factorial(r) * factorial(n - r));
 }
 
 int main() {
-    char direccionIPBinaria[35];  // Dirección IP en formato binario (con puntos)
-    char direccionIPDecimal[20];  // Dirección IP en formato decimal (con puntos)
-    char direccionIPHexadecimal[11];  // Dirección IP en formato hexadecimal (con puntos)
+    char ipBinary[40];
+    printf("Ingrese la dirección IP en binario con puntos: ");
+    fgets(ipBinary, sizeof(ipBinary), stdin);
 
-    // Obtener la dirección IP en binario desde el usuario
-    printf("Ingrese la direccion IP en formato binario (con puntos): ");
-    fgets(direccionIPBinaria, sizeof(direccionIPBinaria), stdin);
-    direccionIPBinaria[strcspn(direccionIPBinaria, "\n")] = '\0';  // Eliminar el salto de línea
-
-    // Dividir la dirección IP en octetos binarios
-    char *token = strtok(direccionIPBinaria, ".");
-    int octetosBinarios[4];
-    int contadorOctetos = 0;
-
+    int octets[4];
+    char* token = strtok(ipBinary, ".");
+    int i = 0;
     while (token != NULL) {
-        octetosBinarios[contadorOctetos++] = binarioADecimal(token);
+        octets[i] = strtol(token, NULL, 2);
         token = strtok(NULL, ".");
+        i++;
     }
 
-    // Convertir los octetos binarios a decimal y hexadecimal, e imprimir el proceso paso a paso
-    printf("\nDireccion IP en formato decimal:\n");
-    for (int i = 0; i < 4; i++) {
-        printf("%d", octetosBinarios[i]);
-        if (i < 3)
-            printf(".");
-    }
+    printf("Dirección IP en decimal: %d.%d.%d.%d\n", octets[0], octets[1], octets[2], octets[3]);
+    printf("Dirección IP en hexadecimal: %02X:%02X:%02X:%02X\n", octets[0], octets[1], octets[2], octets[3]);
 
-    printf("\n\nDireccion IP en formato hexadecimal:\n");
-    for (int i = 0; i < 4; i++) {
-        decimalAHexadecimal(octetosBinarios[i], direccionIPHexadecimal);
-        printf("%s", direccionIPHexadecimal);
-        if (i < 3)
-            printf(".");
-    }
-
-    // Realizar análisis combinatorio
-    long combinaciones = pow(2, 32 - contadorOctetos);
-    printf("\n\nAnalisis combinatorio:\n");
-    printf("Numero de combinaciones posibles: %ld\n", combinaciones);
+    int sum = octets[0] + octets[1] + octets[2] + octets[3];
+    long long numCombinations = combinations(sum, 4);
+    printf("Número de combinaciones posibles: %lld\n", numCombinations);
 
     return 0;
 }
