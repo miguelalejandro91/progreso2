@@ -23,7 +23,7 @@ char* decimalAHexadecimal(int decimal) {
 
 int main() {
     char direccionIPBinario[35];
-    printf("Ingresa la dirección IP en formato binario (con puntos): ");
+    printf("Ingresa la direccion IP en formato binario (con puntos): ");
     scanf("%s", direccionIPBinario);
 
     // Dividir la cadena en octetos
@@ -39,7 +39,7 @@ int main() {
     }
 
     // Imprimir dirección IP en decimal
-    printf("Dirección IP en decimal: ");
+    printf("Direccion IP en decimal: ");
     for (int i = 0; i < 4; i++) {
         printf("%d", octetos[i]);
         if (i < 3) {
@@ -49,7 +49,7 @@ int main() {
     printf("\n");
 
     // Imprimir dirección IP en hexadecimal
-    printf("Dirección IP en hexadecimal: ");
+    printf("Direccion IP en hexadecimal: ");
     for (int i = 0; i < 4; i++) {
         char *hex = decimalAHexadecimal(octetos[i]);
         printf("%s", hex);
@@ -66,7 +66,7 @@ int main() {
         combinaciones *= (octetos[i] + 1);
     }
 
-    printf("Número de combinaciones posibles: %llu\n", combinaciones);
+    printf("Numero de combinaciones posibles: %llu\n", combinaciones);
 
     return 0;
 }
