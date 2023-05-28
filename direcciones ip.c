@@ -2,6 +2,7 @@
 #include <stdlib.h>
 #include <string.h>
 
+
 void binarioADecimalYHexadecimal(char *ipBinaria) {
     char *token;
     int octetos[4];
