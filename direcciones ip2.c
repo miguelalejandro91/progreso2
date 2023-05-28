@@ -1,3 +1,7 @@
+/*crear un programa en C, que convierta direcciones ip binarias a decimales y hexadecimales
+para transformar direcciones ipv4 e ipv6, ademas realizar un analisis convinatorio
+del direccionamiento para analizar todas las posibles subredes que posee el direccionamiento*/
+
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
