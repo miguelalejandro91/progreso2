@@ -54,10 +54,66 @@ int main() {
 
     // Inicializar los nombres de los alumnos (ejemplo)
     char nombres[NUM_ALUMNOS][50] = {
-        "Juan",
-        "Maria",
-        "Pedro",
+        "steven",
+        "sergio",
+        "alberto",
+        "gabriel",
+        "jacinto",
+        "pedro",
+        "daniel",
+        "sofia",
+        "manuel",
+        "miguel",
+        "jose",
+        "samael",
+        "jesus",
+        "maria",
+        "cristian",
+        "danilo",
+        "juan",
+        "marlen",
+        "gustavo",
+        "pato",
+        "mario",
+        "bianca",
+        "andrea",
+
         // Agregar más nombres
+
+       };
+
+    // Ingresar calificaciones aleatorias para cada alumno en cada progreso
+    for (int i = 0; i < NUM_ALUMNOS; i++) {
+        for (int j = 0; j < NUM_PROGRESOS; j++) {
+            alumnos[i].calificaciones[j] = rand() % 10 + 1;
+        }
+    }
+
+    // Calcular promedio de cada alumno
+    printf("Promedio de calificaciones de cada alumno durante el semestre:\n");
+    for (int i = 0; i < NUM_ALUMNOS; i++) {
+        float promedio = calcularPromedioAlumno(alumnos[i].calificaciones, NUM_PROGRESOS);
+        printf("Alumno %s: %.2f\n", nombres[i], promedio);
+    }
+
+    // Calcular promedio del grupo para cada progreso
+    printf("\nPromedio del grupo de estudiantes para cada progreso:\n");
+    for (int j = 0; j < NUM_PROGRESOS; j++) {
+        float promedioGrupo = 0;
+        for (int i = 0; i < NUM_ALUMNOS; i++) {
+            promedioGrupo += alumnos[i].calificaciones[j];
+        }
+        promedioGrupo /= NUM_ALUMNOS;
+        printf("Progreso %d: %.2f\n", j + 1, promedioGrupo);
+    }
+
+    // Encontrar al alumno con el mayor promedio de calificación durante el semestre
+    int mejorAlumnoIndex = encontrarMejorAlumno(alumnos);
+    float mejorPromedio = calcularPromedioAlumno(alumnos[mejorAlumnoIndex].calificaciones, NUM_PROGRESOS);
+    printf("\nEl alumno con el mayor promedio de calificación durante el semestre es %s con un promedio de %.2f\n", nombres[mejorAlumnoIndex], mejorPromedio);
+
+    return 0;
+} 
 
 
 
