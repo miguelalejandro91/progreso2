@@ -9,6 +9,22 @@ y Funciones para escribir un programa en lenguaje C que permita realizar los sig
 #include <stdlib.h>
 #include <time.h>
 
+#define NUM_ALUMNOS 23
+#define NUM_PROGRESOS 3
+
+struct Alumno {
+    char nombre[50];
+    int calificaciones[NUM_PROGRESOS];
+};
+
+float calcularPromedioAlumno(int calificaciones[], int numCalificaciones) {
+    int suma = 0;
+    for (int i = 0; i < numCalificaciones; i++) {
+        suma += calificaciones[i];
+    }
+    return (float)suma / numCalificaciones;
+}
+
 
 
 
